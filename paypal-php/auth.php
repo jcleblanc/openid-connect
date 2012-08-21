@@ -145,7 +145,8 @@ class PayPalAccess{
         if ($method == 'GET'){
             $options = array(
                 CURLOPT_URL => $url,
-                CURLOPT_RETURNTRANSFER => 1
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_SSLVERSION => 3
             );
             curl_setopt_array($ch, $options);
         //POST / PUT request: send post object and return data transfer
@@ -155,7 +156,8 @@ class PayPalAccess{
                 CURLOPT_POST => 1,
                 CURLOPT_VERBOSE => 1,
                 CURLOPT_POSTFIELDS => $postvals,
-                CURLOPT_RETURNTRANSFER => 1
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_SSLVERSION => 3
             );
             curl_setopt_array($ch, $options);
         }
